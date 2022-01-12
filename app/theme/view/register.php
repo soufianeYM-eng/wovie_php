@@ -22,7 +22,13 @@
             </div>
             <button type="submit" class="btn btn-block btn-theme btn-lg"><?php echo __('Register');?></button>
         </form>
+        <div id="paypal-button-container" style="margin-top:20px;">
+            
+        </div>
+
         <div class="text-center my-3"><?php echo __('I have a registered account');?> <a href="<?php echo APP.'/login';?>" class="text-white"><?php echo __('Login');?></a></div>
     </div>
 </div>
+<script src="https://www.paypal.com/sdk/js?client-id=Acrki1IgTtAer0iOKUw_jY8pGIkZZmH5ui-LVq3PzceH8P0lCVglyAQ20IGJbvxeGkT_lBWVFuEWfrAp&disable-funding=credit,card"></script>
+<script src="<?php echo ASSETS.'/js/paypal.js' ?>"></script>
 <?php require PATH . '/theme/view/common/footer.php';?>
