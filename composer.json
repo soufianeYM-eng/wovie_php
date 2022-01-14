@@ -1,5 +1,7 @@
 {
     "require": {
-        "stripe/stripe-php": "^7.109"
+        "stripe/stripe-php": "^7.109",
+        "ext-gd": "^7.4",
+        "ext-exif": "^7.4"
     }
 }
