@@ -2,6 +2,7 @@
 
 // General
 App::addRoute("GET|POST", "/",										"Main");
+App::addRoute("GET|POST", "/home",									"Home");
 App::addRoute("GET|POST", "/ajax/[*:ajax]/[*:action]?/?",			"Ajax"); 
 App::addRoute("GET|POST", "/api/[*:api]/[*:action]?/?",				"Api");
 App::addRoute("GET|POST", "/cron/[*:action]?/?",					"Cron");

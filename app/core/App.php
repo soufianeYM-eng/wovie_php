@@ -89,7 +89,8 @@ class App {
         $Permissions = array(
             'Login',
             'Register',
-            'Logout'
+            'Logout',
+            'Home'
         );
         $AuthSettings   = json_decode($AuthUser['data'], true);
         $this->controller->setVariable("AuthUser", $AuthUser) 
@@ -101,7 +102,7 @@ class App {
                          ->setVariable("Notify", Controller::notify()); 
 
         if(!in_array($Route->target, $Permissions) AND !$AuthUser['id'] AND get($Settings,'data.members','general') == '1') {
-            header('location:'.APP.'/login');
+            header('location:'.APP.'/home');
         } 
         $this->controller->process();
         
