@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo ASSETS.'/css/homeStyle.css';?>">
+    <title>Aeonnovel - Movies</title>
+</head>
+<body>
+    <header class="showcase">
+        <div class="showcase-top">
+            <img src="<?php echo ASSETS.'/img/logoMovie.png';?>" alt="Aeonnovel Logo">
+            <a href="<?php echo APP.'/login';?>" class="btn btn-rounded">Sign In</a>
+        </div>
+        <div class="showcase-content">
+            <h1>Novels and lightnovels in audiobooks</h1>
+            <div class="flex">
+                <h3 class="header-sub-title" id="word"></h3><p class="header-sub-title blink">|</p>
+            </div>
+            <p>Ready to start? Enter your email to begin or restart your account</p>
+            <input type="email" name="email" id="mail" placeholder="Email address">
+            <a href="#" class="btn btn-lg">Get started</a>
+            <span class="quote-trial"><img src="<?php echo ASSETS.'/img/left-arrow.png'; ?>">Start your 7 day free trial</span>
+        </div>
+    </header>
+
+    <section class="style-cards">
+        <div class="card-0">
+            <img src="<?php echo ASSETS.'/img/2.jpg';?>" alt="Netflix Mobile">
+            <div class="desc-0">
+                <h1>Create profiles for kids.</h1>
+                <h3>Send kids on adventures with their favourite characters in a space made just for them—free with your membership.</h3>
+            </div>
+        </div>
+        <div class="card-1">
+            <div class="desc-1">
+                <h1>Enjoy on your TV.</h1>
+                <h3>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
+            </div>
+            <img src="<?php echo ASSETS.'/img/tv.png';?>" alt="Netflix TV">
+            <video class="video-1" autoplay="" playsinline="" muted="" loop=""><source src="<?php echo ASSETS.'/img/1.m4v';?>" type="video/mp4"></video>
+        </div>
+        <div class="card-2">
+            <img src="<?php echo ASSETS.'/img/3.jpg';?>" alt="Netflix Mobile">
+            <div class="desc-2">
+                <h1>Download your shows to watch offline.</h1>
+                <h3>Save your favourites easily and always have something to watch.</h3>
+            </div>
+        </div>
+        <div class="card-3">
+            <div class="desc-3">
+                <h1>Watch everywhere.</h1>
+                <h3>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</h3>
+            </div>
+            <img src="<?php echo ASSETS.'/img/4.png';?>" alt="Device-Pile-In">
+            <video class="video-2" autoplay="" playsinline="" muted="" loop=""><source src="<?php echo ASSETS.'/img/2.m4v';?>" type="video/mp4"></video>
+        </div>
+    </section>
+
+    <section class="lastsec">
+        <div class="faq">
+            <h1>Frequently Asked Questions</h1>
+            <ul class="questions">
+                <li>What is Netflix?</li>
+                <li>How much does Netflix cost?</li>
+                <li>Where can I watch?</li>
+                <li>How do I cancel?</li>
+                <li>What can I watch on Netflix?</li>
+                <li>Is Netflix good for kids?</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p>Questions? Call 000-800-040-1843</p>
+        <div class="footer-cols">
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Speed Test</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Help Centre</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Watch for Free</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Ways to Watch</a></li>
+                <li><a href="#">Corporate Information</a></li>
+                <li><a href="#">Legal Notices</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Media Centre</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Netflix Originals</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    const words = ["Unlimited access","Several thousand hours"];
+    let i = 0;
+    let timer;
+
+    function typingEffect() {
+        let word = words[i].split("");
+        var loopTyping = function() {
+            if (word.length > 0) {
+                document.getElementById('word').innerHTML += word.shift();
+            } else {
+                deletingEffect();
+                return false;
+            };
+            timer = setTimeout(loopTyping,150);
+        };
+        loopTyping();
+    };
+
+    function deletingEffect() {
+        let word = words[i].split("");
+        var loopDeleting = function() {
+            if (word.length > 0) {
+                word.pop();
+                document.getElementById('word').innerHTML = word.join("");
+            } else {
+                if (words.length > (i + 1)) {
+                    i++;
+                } else {
+                    i = 0;
+                };
+                typingEffect();
+                return false;
+            };
+            timer = setTimeout(loopDeleting,150);
+        };
+        loopDeleting();
+    };
+
+    typingEffect();
+
+
+</script>

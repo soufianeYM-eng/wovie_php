@@ -24,6 +24,8 @@
     <link rel="dns-prefetch" href="//code.jquery.com" />
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="stylesheet" href="<?php echo ASSETS.'/css/signupStyle.css';?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link as="style" media="all" rel="stylesheet preload prefetch" href="<?php echo THEME.'/css/app.css?v='.VERSION;?>" type="text/css" crossorigin="anonymous" />
     <link rel="preload" href="<?php echo ASSETS.'/webfonts/inter/Inter-Regular.woff2';?>" as="font" crossorigin="anonymous" />
     <link rel="preload" href="<?php echo ASSETS.'/webfonts/inter/Inter-Medium.woff2';?>" as="font" crossorigin="anonymous" />
