@@ -20,6 +20,7 @@ paypal.Buttons({
       document.getElementById("step2").style.display="none";
       document.getElementById("success-payment").style.display="block";
       setTimeout(() => {
+        localStorage.removeItem("user-mail");
         document.forms["infos_form_step1"].submit();
       }, 3000);
     })
