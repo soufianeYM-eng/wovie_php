@@ -27,7 +27,7 @@
                 <div class="form-check">
                   <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                    <span class="checkbox-title">Je ne souhaite pas recevoir les offres spéciales de Netflix par e-mail.</span>
+                    <span class="checkbox-title">Je ne souhaite pas recevoir les offres spéciales de Aeonnovel par e-mail.</span>
                   </label>
                 </div>
                 <!-- <button type="submit" class="btn btn-block btn-theme btn-lg"><?php echo __('Register');?></button> -->
