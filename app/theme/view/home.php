@@ -29,7 +29,7 @@
 
     <section class="style-cards">
         <div class="card-0">
-            <img src="<?php echo ASSETS.'/img/2.jpg';?>" alt="Netflix Mobile">
+            <img src="<?php echo ASSETS.'/img/2.jpg';?>" alt="Aeonnovel Mobile">
             <div class="desc-0">
                 <h1>Create profiles for kids.</h1>
                 <h3>Send kids on adventures with their favourite characters in a space made just for them—free with your membership.</h3>
@@ -40,11 +40,11 @@
                 <h1>Enjoy on your TV.</h1>
                 <h3>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
             </div>
-            <img src="<?php echo ASSETS.'/img/tv.png';?>" alt="Netflix TV">
+            <img src="<?php echo ASSETS.'/img/tv.png';?>" alt="Aeonnovel TV">
             <video class="video-1" autoplay="" playsinline="" muted="" loop=""><source src="<?php echo ASSETS.'/img/1.m4v';?>" type="video/mp4"></video>
         </div>
         <div class="card-2">
-            <img src="<?php echo ASSETS.'/img/3.jpg';?>" alt="Netflix Mobile">
+            <img src="<?php echo ASSETS.'/img/3.jpg';?>" alt="Aeonnovel Mobile">
             <div class="desc-2">
                 <h1>Download your shows to watch offline.</h1>
                 <h3>Save your favourites easily and always have something to watch.</h3>
@@ -64,12 +64,12 @@
         <div class="faq">
             <h1>Frequently Asked Questions</h1>
             <ul class="questions">
-                <li>What is Netflix?</li>
-                <li>How much does Netflix cost?</li>
+                <li>What is Aeonnovel?</li>
+                <li>How much does Aeonnovel cost?</li>
                 <li>Where can I watch?</li>
                 <li>How do I cancel?</li>
-                <li>What can I watch on Netflix?</li>
-                <li>Is Netflix good for kids?</li>
+                <li>What can I watch on Aeonnovel?</li>
+                <li>Is Aeonnovel good for kids?</li>
             </ul>
         </div>
     </section>
@@ -100,7 +100,7 @@
                 <li><a href="#">Media Centre</a></li>
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Netflix Originals</a></li>
+                <li><a href="#">Aeonnovel Originals</a></li>
             </ul>
         </div>
     </footer>
