@@ -102,7 +102,7 @@
     <meta name="twitter:image" content="<?php echo $Config['image'];?>" />
     <?php } ?>
     <?php } ?>
-    <link rel="shortcut icon" href="<?php echo LOCAL.'/'.get($Settings,'data.favicon','general').'?v='.VERSION;?>">
+    <link rel="shortcut icon" href="<?php echo ASSETS.'/img/favicon.png';?>">
 </head>
 
 <body>

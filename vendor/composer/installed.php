@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'cc9c64a257d60729a3e490bec503de2127c08c8b',
+    'reference' => '4d3e7acf7987887fa8f7d99055eb9d036bdf286c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'cc9c64a257d60729a3e490bec503de2127c08c8b',
+      'reference' => '4d3e7acf7987887fa8f7d99055eb9d036bdf286c',
     ),
     'stripe/stripe-php' => 
     array (

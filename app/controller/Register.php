@@ -27,9 +27,7 @@ class Register extends Controller
     {
         $Email      = Input::cleaner($_POST['email']);
         $Password   = Input::cleaner($_POST['password']);
-        $Name       = Input::cleaner($_POST['name']);
-        $Username   = Input::cleaner($_POST['username']);
-        if (!$Email || !$Password || !$Name || !$Username) {
+        if (!$Email || !$Password) {
             $Notify['type'] = 'warning';
             $Notify['text'] = __('Fill in all fields'); 
         }
@@ -40,33 +38,20 @@ class Register extends Controller
 
         if (empty($Notify)) {
             $EmailCheck      = $this->db->from('users')->where('email',$Email,'=','AND')->first();
-            $UsernameCheck      = $this->db->from('users')->where('username',$Username,'=','AND')->first();
             if ($Email == $EmailCheck['email']) {
                 $Notify['type']     = 'warning';
                 $Notify['text']     = __('Email already registered !'); 
-            }
-            if ($Username == $UsernameCheck['username']) {
-                $Notify['type']     = 'warning';
-                $Notify['text']     = __('Username already registered !'); 
             }
             if (mb_strlen($Password) < 6) {
                 $Notify['type']     = 'warning';
                 $Notify['text']     = __('Password must be at least 6 characters'); 
             }
-            if (mb_strlen($Username) < 4) {
-                $Notify['type']     = 'warning';
-                $Notify['text']     = __('Username must be at least 4 characters'); 
-            }
-            if (mb_strlen($Name) < 3) {
-                $Notify['type']     = 'warning';
-                $Notify['text']     = __('Your name must be at least 3 characters'); 
-            }
             
             if (empty($Notify)) {
                 $dataarray        = array(
                     "account_type"              => 'user',
-                    "name"                      => Input::cleaner($_POST['name']),
-                    "username"                  => Input::cleaner($_POST['username']),
+                    "name"                      => NULL,
+                    "username"                  => NULL,
                     "email"                     => Input::cleaner($_POST['email']),
                     "password"                  => Input::cryptor($Password),
                     "created"                   => date("Y-m-d H:i:s")

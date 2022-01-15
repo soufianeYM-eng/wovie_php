@@ -14,15 +14,10 @@
             <h6 class="step">STEP 1 OF 2</h6>
             <h2 class="title">Create a password to start your membership</h2>
             <p class="sub-title">Just a few more steps and you're done! <br> We hate paperwork, too.</p>
-            <form id="form_infos" method="post" autocomplete="off" class="form-content">
+            <form id="form_infos" name="infos_form_step1" method="post" autocomplete="off" class="form-content">
                 <input type="hidden" name="_TOKEN" value="<?php echo $Token;?>">
                 <input type="hidden" name="_ACTION" value="register">
-                <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="<?php echo __('Name');?>" required="true" value="<?php echo Input::cleaner($_POST['name']);?>">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="<?php echo __('Username');?>" required="true" value="<?php echo Input::cleaner($_POST['username']);?>">
-                </div>
+                <ul class="errors"></ul>
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" placeholder="<?php echo __('Email');?>" required="true" value="<?php echo Input::cleaner($_POST['email']);?>">
                 </div>
@@ -57,15 +52,56 @@
             <!-- <div class="text-center my-3"><?php echo __('I have a registered account');?> <a href="<?php echo APP.'/login';?>" class="text-white"><?php echo __('Login');?></a></div> -->
         </div>
     </div>
+
+    <div id="success-payment" class="flex-fill" style="margin-top:3%; display:none;">
+        <div class="auth auth-login">
+            <div class="card-success">
+            <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+                <i class="checkmark">✓</i>
+            </div>
+                <h1>Success</h1> 
+                <p>We received your purchase request;<br/> we'll be in touch shortly!</p><br>
+                <p class="redirect">You will be redirect to your account...</p>
+            </div>
+        </div>
+    </div>
+    <div id="failed-payment" class="flex-fill" style="margin-top:3%; display:none;">
+        <div class="auth auth-login">
+            <div class="card-failed">
+            <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+                <i class="checkmark">X</i>
+            </div>
+                <h1>Failed</h1> 
+                <p>Your subscription payment failed;<br/> please try again!</p><br>
+                <p class="redirect">You will be redirect to payment page...</p>
+            </div>
+        </div>
+    </div>
 </header>
 <script>
+    if(localStorage.getItem("user-mail")){
+        document.forms["infos_form_step1"]["email"].value = localStorage.getItem("user-mail")
+    }
+    var errors = document.querySelector('.errors')
     var btn_next = document.getElementById("btn-next")
     var step_1 = document.getElementById("step1")
     var step_2 = document.getElementById("step2")
     btn_next.addEventListener("click", function(){
-        console.log(step_1);
-        step_1.style.display="none";
-        step_2.style.display="block";
+        var email = document.forms["infos_form_step1"]["email"].value;
+        var password = document.forms["infos_form_step1"]["password"].value;
+        if( email == "" && password == ""){
+            errors.innerHTML ="<li>Please can you enter your email</li>"
+            errors.innerHTML +="<li>Please can you enter your password</li>"
+        }else if(!email.includes('@')){
+            errors.innerHTML ="<li>Please can you enter a correct email</li>"
+        }else if( email == ""){
+            errors.innerHTML ="<li>Please can you enter your email</li>"
+        }else if(password == ""){
+            errors.innerHTML ="<li>Please can you enter your password</li>"
+        }else{
+            step_1.style.display="none";
+            step_2.style.display="block";
+        }
     });
 
 </script>

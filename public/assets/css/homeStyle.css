@@ -3,25 +3,38 @@
     --dark-color: #141414;
     --light-color: #f4f4f4;
 }
-@import url('https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Licorice&family=The+Nautigal&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&display=swap');
 
-@font-face {
+/* @font-face {
     font-family: 'Veitnam';
     src: url("/public/assets/webfonts/BeVietnamPro-Bold.ttf") format("ttf"),
+} */
+
+@font-face {
+    font-family: veitnam;
+    src: url('/public/assets/webfonts/BeVietnamPro-Bold.ttf');
+}
+
+@font-face {
+    font-family: poppins;
+    src: url('/public/assets/webfonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: dancing;
+    src: url('/public/assets/webfonts/DancingScript.ttf');
 }
 
 .quote-trial{
-    font-family: 'Licorice', cursive;
+    font-family: dancing;
+    font-size: 22px;
     z-index: 7;
     position: absolute;
-    bottom: -15vh;
+    bottom: -13vh;
     color: white;
-    left: 47vh;
+    left: 42vh;
 }
 .quote-trial img{
-    width: 8% !important;
+    width: 10% !important;
     margin-right: 7px;
 }
 
@@ -41,7 +54,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: poppins;
     background: #000000;
     color: #999999;
 }
@@ -73,6 +86,11 @@ img{
     width: 100%;
 }
 
+
+.get-started #mail{
+    border: none;
+}
+
 .showcase{
     width: 100%;
     height: 100vh;
@@ -88,9 +106,10 @@ img{
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     box-shadow: 120px 100px 250px #000000 , inset -120px -100px 250px #000000;
 }
+
 
 .showcase-top{
     position: relative;
@@ -158,7 +177,7 @@ img{
 }
 
 .showcase-content h1{
-    font-family: 'Veitnam', sans-serif;
+    font-family: veitnam;
     font-weight: 700;
     font-size: 64px;
     margin: 0px;
@@ -168,11 +187,13 @@ img{
 
 .showcase-content h3{
     color: white;
+    font-family: poppins;
     font-size: 25px;
     margin: 16px 0;
 }
 
 .showcase-content p{
+    font-family: poppins;
     font-size: 19.2px;
     font-weight: 300;
     padding-top: 0.5rem;
@@ -215,14 +236,14 @@ img{
 
 .showcase-content .btn-lg{
     position: absolute;
-    bottom: -8vh;
     font-size: 20px;
     text-align: center;
-    left: 35.1vh;
-    padding: 12px 19px 12px 19px;
+    left: 19%;
+    padding: 13px 19px 12px 19px;
     border-radius: 0px 7px 7px 0px;
     background: #37b6ffff;
-    bottom: -7.7vh;
+    bottom: -8vh;
+    box-shadow: none;
 }
 
 .card-0 , 
