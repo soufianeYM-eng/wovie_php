@@ -74,7 +74,7 @@
                                 <div class="profile-head">
                                     <?php echo __('Hello');?>,</div>
                                 <div class="text-nowrap">
-                                    <?php echo $AuthUser['name'];?>
+                                    <?php echo $AuthUser['email'];?>
                                 </div>
                             </div>
                         </a>

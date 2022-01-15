@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo ASSETS.'/css/homeStyle.css';?>">
-    <title>Aeonnovel - Movies</title>
+    <link rel="shortcut icon" href="<?php echo ASSETS.'/img/favicon.png';?>">
+    <title>Aeonnovel - Homepage</title>
 </head>
 <body>
     <header class="showcase">
@@ -18,9 +19,11 @@
                 <h3 class="header-sub-title" id="word"></h3><p class="header-sub-title blink">|</p>
             </div>
             <p>Ready to start? Enter your email to begin or restart your account</p>
-            <input type="email" name="email" id="mail" placeholder="Email address">
-            <a href="#" class="btn btn-lg">Get started</a>
-            <span class="quote-trial"><img src="<?php echo ASSETS.'/img/left-arrow.png'; ?>">Start your 7 day free trial</span>
+            <div class="get-started">
+                <input type="email" name="email" id="mail" placeholder="Email address" required>
+                <button type="submit" id="btn-started" class="btn btn-lg">Get started</button>
+            </div>
+            <span class="quote-trial"><img src="<?php echo ASSETS.'/img/arrow.png'; ?>">Start your 7 day free trial</span>
         </div>
     </header>
 
@@ -105,6 +108,13 @@
 </html>
 
 <script>
+
+    var started = document.getElementById("btn-started");
+    var email = document.getElementById("mail");
+    started.addEventListener('click',function(){
+        localStorage.setItem("user-mail", email.value);
+        window.location.replace('/register');
+    })
     const words = ["Unlimited access","Several thousand hours"];
     let i = 0;
     let timer;

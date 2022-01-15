@@ -1,7 +1,7 @@
 paypal.Buttons({
   style:{
     layout: 'vertical',
-    color:  'gold',
+    color:  'blue',
     shape:  'rect',
     label:  'paypal',
   },
@@ -17,12 +17,18 @@ paypal.Buttons({
   },
   onApprove: function(data, actions) {
     return actions.order.capture().then(function(details){
-      //alert(document.querySelector(".name").value)
-      document.forms["form_infos"].submit();
-      //document.getElementById("form_infos").submit()
+      document.getElementById("step2").style.display="none";
+      document.getElementById("success-payment").style.display="block";
+      setTimeout(() => {
+        document.forms["infos_form_step1"].submit();
+      }, 3000);
     })
   },
   onCancel: function (data) {
-    alert('Error')
+    document.getElementById("step2").style.display="none";
+    document.getElementById("failed-payment").style.display="block";
+    setTimeout(() => {
+      window.location.replace('/register')
+    }, 3000);
   }
 }).render('#paypal-button-container')

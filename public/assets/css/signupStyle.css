@@ -1,3 +1,12 @@
+@font-face {
+    font-family: poppins;
+    src: url('/public/assets/webfonts/Poppins-Regular.ttf');
+}
+
+.body{
+	background-color: #fff !important;
+}
+
 .header{
     display: flex;
     flex-direction: row;
@@ -20,10 +29,92 @@
 	border: 1px solid #37b6ff !important;
 }
 
+.card-success h1 {
+	color: #88B04B;
+	font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+	font-weight: 900;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+.card-success p {
+	color: #404F5E;
+	font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+	font-size:20px;
+	margin: 0;
+}
+.card-success i {
+	color: #9ABC66;
+	font-size: 100px;
+	line-height: 200px;
+	margin-left:-15px;
+}
+.card-success {
+	font-family: poppins;
+	background: white;
+	padding: 60px;
+	border-radius: 4px;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.card-success .redirect{
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+
+.card-failed h1 {
+	color: #e64747;
+	font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+	font-weight: 900;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+.card-failed p {
+	color: #404F5E;
+	font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+	font-size:20px;
+	margin: 0;
+}
+.card-failed i {
+	color: #bc6666;
+	font-size: 100px;
+	line-height: 200px;
+	margin-left:-15px;
+}
+.card-failed {
+	font-family: poppins;
+	background: white;
+	padding: 60px;
+	border-radius: 4px;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.card-failed .redirect{
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+
+
 .btn-stripe{
-	margin-top:10px; 
-	background:#008cdd !important;
-	padding: 1px !important;
+	margin-top: 10px;
+    background: #0070BA !important;
+    padding: 6px !important;
+    border-radius: 4px !important;
+}
+
+.errors{
+	background: rgba(255, 0, 0, 0.5);
+    border-radius: 7px;
+}
+
+.errors li{
+	color: white;
+    padding: 6px 0px 6px 0px;
 }
 
 .secure-quote{
