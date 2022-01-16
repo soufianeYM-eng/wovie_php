@@ -19,6 +19,11 @@ paypal.Buttons({
     return actions.order.capture().then(function(details){
       document.getElementById("step2").style.display="none";
       document.getElementById("success-payment").style.display="block";
+      var type_method = document.createElement("INPUT");
+      type_method.type = "hidden";
+      type_method.name = "method_payment";
+      type_method.value = "Paypal";
+      document.getElementById('form_infos').appendChild(type_method);
       setTimeout(() => {
         localStorage.removeItem("user-mail");
         document.forms["infos_form_step1"].submit();

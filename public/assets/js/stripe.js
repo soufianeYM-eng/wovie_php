@@ -11,10 +11,16 @@ btn.addEventListener('click', function(e) {
         }
     ],
     mode: "subscription",
-    successUrl: "http://wovie.test/",
-    cancelUrl: "http://wovie.test/register",
   }).then(function(result){
-    document.getElementById("form_infos").submit();
+      document.getElementById("step2").style.display="none";
+      document.getElementById("success-payment").style.display="block";
+      var type_method = document.createElement("INPUT");
+      type_method.type = "hidden";
+      type_method.name = "method_payment";
+      type_method.value = "Paypal";
+      document.getElementById('form_infos').appendChild(type_method);
+      localStorage.removeItem("user-mail");
+      document.forms["infos_form_step1"].submit();
   }).catch(function(){
     window.location.replace('http://wovie.test/register')
   })

@@ -506,7 +506,7 @@ INSERT INTO `settings` (`id`, `name`, `data`) VALUES
 (1, 'general', '{\"company\":\"Wovie\",\"title\":\"Wovie - Movie and TV Series\",\"description\":\"Online movie and tv series streaming platform\",\"language\":\"en\",\"dashboard_language\":\"tr\",\"members\":\"1\",\"titlesub\":\"1\",\"discussion\":\"1\",\"headcode\":\"\",\"footer_text\":\"\",\"logo\":\"logo.svg\",\"favicon\":\"favicon.svg\"}'),
 (3, 'social', '{\"facebook\":\"wovie\",\"twitter\":\"wovie\",\"instagram\":\"wovie\",\"youtube\":\"wovie\"}'),
 (4, 'theme', '{\"general\":\"#f5c518\",\"button\":\"#f5c518\",\"dashboard\":\"#f5c518\"}'),
-(5, 'seo', '{\"movies_title\":\"${title} Movie Recommendations\",\"movies_description\":\"${title} Watch movies in HD quality with language options with dubbing and subtitles.\",\"movies_category_title\":\"${title} Movie Recommendations\",\"movies_category_description\":\"Best ${title} Watch movies in HD quality with language options with dubbing and subtitles.\",\"movie_title\":\"${title} Movie free watch\",\"movie_description\":\"${title} watch your movie in HD quality fast and uninterrupted\",\"series_title\":\"${title} Serie Recommendations\",\"series_description\":\"${title} Watch series in HD quality with language options with dubbing and subtitles.\",\"series_category_title\":\"${title} Serie Recommendations\",\"series_category_description\":\"Best ${title} Watch series in HD quality with language options with dubbing and subtitles.\",\"serie_title\":\"${title} ${season}.Season ${episode}.Episode HD watch\",\"serie_description\":\"${title} ${season}.Season ${episode}.Episode HD watch\",\"serie_profile_title\":\"${title} Serie free watch\",\"serie_profile_description\":\"${title} watch your serie in HD quality fast and uninterrupted\",\"category_title\":\"${title} Serie and Movie Recommendations\",\"category_description\":\"${title} Watch series and movies in HD quality with language options with dubbing and subtitles.\",\"actor_title\":\"${title} Watch the actor\'s movies and series\",\"actor_description\":\"${title} Watch the movies and TV series the actor has played in full HD\",\"discovery_title\":\"Dubbed and Subtitled Series & Movies Explore and Watch\",\"discovery_description\":\"Discover the best dubbing, subtitled TV series and movies with advanced filters and watch them in 1080p quality.\",\"channels_title\":\"Popular TV Channels Online watch\",\"channels_description\":\"Popular TV Channels Online watch streaming\",\"channel_title\":\"${title} TV Channel Online watch streaming\",\"channel_description\":\"${title} TV Channel Online watch streaming\"}'),
+(5, 'seo', '{\"movies_title\":\"${title} Movie Recommendations\",\"movies_description\":\"${title} Watch movies in HD quality with language options with dubbing and subtitles.\",\"movies_category_title\":\"${title} Movie Recommendations\",\"movies_category_description\":\"Best ${title} Watch movies in HD quality with language options with dubbing and subtitles.\",\"movie_title\":\"${title} Movie free watch\",\"movie_description\":\"${title} watch your movie in HD quality fast and uninterrupted\",\"series_title\":\"${title} Serie Recommendations\",\"series_description\":\"${title} Watch series in HD quality with language options with dubbing and subtitles.\",\"series_category_title\":\"${title} Serie Recommendations\",\"series_category_description\":\"Best ${title} Watch series in HD quality with language options with dubbing and subtitles.\",\"serie_title\":\"${title} ${season}.Season ${episode}.Episode HD watch\",\"serie_description\":\"${title} ${season}.Season ${episode}.Episode HD watch\",\"serie_profile_title\":\"${title} Serie free watch\",\"serie_profile_description\":\"${title} watch your serie in HD quality fast and uninterrupted\",\"category_title\":\"${title} Serie and Movie Recommendations\",\"category_description\":\"${title} Watch series and movies in HD quality with language options with dubbing and subtitles.\",\"actor_title\":\"${title} Watch the actor\s movies and series\",\"actor_description\":\"${title} Watch the movies and TV series the actor has played in full HD\",\"discovery_title\":\"Dubbed and Subtitled Series & Movies Explore and Watch\",\"discovery_description\":\"Discover the best dubbing, subtitled TV series and movies with advanced filters and watch them in 1080p quality.\",\"channels_title\":\"Popular TV Channels Online watch\",\"channels_description\":\"Popular TV Channels Online watch streaming\",\"channel_title\":\"${title} TV Channel Online watch streaming\",\"channel_description\":\"${title} TV Channel Online watch streaming\"}'),
 (6, 'api', NULL),
 (7, 'block', '{\"trends\":\"1\",\"movie\":\"1\",\"serie\":\"1\",\"channels\":\"1\",\"collections\":\"1\",\"discussions\":\"1\",\"actors\":\"1\",\"categories\":\"1\"}'),
 (8, 'email', '');
@@ -560,6 +560,15 @@ CREATE TABLE `users` (
   `banned` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `payment_infos` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `date_payment` datetime DEFAULT NULL,
+  `method` varchar(65) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 INSERT INTO `users` (`id`, `account_type`, `username`, `name`, `email`, `password`, `avatar`, `data`, `token`, `banned`, `created`) VALUES
 (1, 'admin', 'admin', 'Wovie', 'admin@admin.com', '938c8a307c7cd31299e70a0e4c1ad372', NULL, '{\"social\":{\"facebook\":\"\",\"twitter\":\"\",\"instagram\":\"\",\"youtube\":\"\"}}', 'd4c1a9117adbea3effb8e8553565dafa', 0, '2021-01-09 18:02:08');
@@ -673,6 +682,9 @@ ALTER TABLE `tools`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `payment_infos`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `videos_option`
   ADD PRIMARY KEY (`id`);
 
@@ -761,6 +773,9 @@ ALTER TABLE `tools`
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
+ALTER TABLE `payment_infos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 ALTER TABLE `videos_option`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
@@ -773,6 +788,9 @@ ALTER TABLE `collections_post`
 
 ALTER TABLE `comments`
   ADD CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `payment_infos`
+  ADD CONSTRAINT `user_payment` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `comments_reaction`
   ADD CONSTRAINT `reaction` FOREIGN KEY (`comment_id`) REFERENCES `comments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
