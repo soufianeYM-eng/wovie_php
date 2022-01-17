@@ -90,7 +90,10 @@ class App {
             'Login',
             'Register',
             'Logout',
-            'Home'
+            'Home',
+            'Success',
+            'Stripe',
+            'Payment'
         );
         $AuthSettings   = json_decode($AuthUser['data'], true);
         $this->controller->setVariable("AuthUser", $AuthUser) 

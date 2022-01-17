@@ -10,24 +10,24 @@
 <body>
     <header class="showcase">
         <div class="showcase-top">
-            <img src="<?php echo ASSETS.'/img/logoMovie.png';?>" alt="Aeonnovel Logo">
-            <a href="<?php echo APP.'/login';?>" class="btn btn-rounded">Sign In</a>
+            <img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo">
+            <a href="<?php echo APP.'/login';?>" class="btn btn-rounded btn-signIn">Sign In</a>
         </div>
         <div class="showcase-content">
             <h1>Novels and lightnovels in audiobooks</h1>
             <div class="flex">
-                <h3 class="header-sub-title" id="word"></h3><p class="header-sub-title blink">|</p>
+                <h3 class="header-sub-title" id="word"></h3><p class="header-sub-title blink typed-cursor">|</p>
             </div>
             <p>Ready to start? Enter your email to begin or restart your account</p>
             <div class="get-started">
                 <input type="email" name="email" id="mail" placeholder="Email address" required>
                 <button type="submit" id="btn-started" class="btn btn-lg">Get started</button>
             </div>
-            <span class="quote-trial"><img src="<?php echo ASSETS.'/img/arrow.png'; ?>">Start your 7 day free trial</span>
+            <img class="quote-trial" src="<?php echo ASSETS.'/img/quote_7_day.png'; ?>">
         </div>
     </header>
 
-    <section class="style-cards">
+    <!-- <section class="style-cards">
         <div class="card-0">
             <img src="<?php echo ASSETS.'/img/2.jpg';?>" alt="Aeonnovel Mobile">
             <div class="desc-0">
@@ -103,7 +103,7 @@
                 <li><a href="#">Aeonnovel Originals</a></li>
             </ul>
         </div>
-    </footer>
+    </footer> -->
 </body>
 </html>
 
@@ -125,7 +125,9 @@
             if (word.length > 0) {
                 document.getElementById('word').innerHTML += word.shift();
             } else {
-                deletingEffect();
+                setTimeout(() => {
+                    deletingEffect();
+                }, 2300);
                 return false;
             };
             timer = setTimeout(loopTyping,150);
@@ -148,7 +150,7 @@
                 typingEffect();
                 return false;
             };
-            timer = setTimeout(loopDeleting,150);
+            timer = setTimeout(loopDeleting,45);
         };
         loopDeleting();
     };

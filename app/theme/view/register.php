@@ -3,7 +3,7 @@
 <header class="showcase">
     <div class="header">
         <div class="logo">
-            <img src="<?php echo ASSETS.'/img/logoMovie.png';?>" alt="Aeonnovel Logo">
+            <a href="<?php echo APP.'/home';?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo"></a>
         </div>
         <div class="sign-in">
             <a href="<?php echo APP.'/login';?>" class="btn btn-rounded">Sign In</a>
@@ -44,10 +44,20 @@
             <p class="sub-title">Your membership starts as <br> soon as you set up <br> payment</p>
             <p class="payment-quote"> No commitments.<br>Cancel online anytime. </p>
             <!-- <button id="btn-next" class="btn btn-block btn-lg"><?php echo __('Next');?></button> -->
-            <span class="secure-quote">Secure Server <i class="fas fa-lock fa-sm" style="color:#FFD700;"></i></span>
+            <span class="secure-quote">Secure Server <i class="fas fa-lock fa-sm" style="color:#FFD700;"></i></span><br>
             <div id="payment-card">
-                <div id="paypal-button-container" style="margin-top:30px;"></div>
-                <button id="stripe-button-container" class="btn btn-block btn-stripe"><i class="fab fa-stripe fa-3x" style="color:white;"></i></button>
+                <!-- <div id="paypal-button-container" style="margin-top:30px;"></div> -->
+                <div id="stripe-button-container" class="payment">
+                    <p>Credit or Debit Card</p>
+                    <div class="logos-payment">
+                        <img src="<?php echo ASSETS.'/img/logoPayment/visa-v3.svg';?>" alt="visa-card">
+                        <img src="<?php echo ASSETS.'/img/logoPayment/mastercard-v2.svg';?>" alt="master-card">
+                        <img src="<?php echo ASSETS.'/img/logoPayment/amex.svg';?>" alt="amex-card">
+                        <img src="<?php echo ASSETS.'/img/logoPayment/unionpay.svg';?>" alt="unionpay-card">
+                    </div>
+                    <img class="arrow_right" src="<?php echo ASSETS.'/img/logoPayment/arrow_right.svg';?>" alt="">
+                </div>
+                <!-- <button id="stripe-button-container" class="btn btn-block btn-stripe"><i class="fab fa-stripe fa-3x" style="color:white;"></i></button> -->
             </div>
             <!-- <div class="text-center my-3"><?php echo __('I have a registered account');?> <a href="<?php echo APP.'/login';?>" class="text-white"><?php echo __('Login');?></a></div> -->
         </div>
@@ -105,9 +115,11 @@
     });
 
 </script>
-<script src="https://www.paypal.com/sdk/js?client-id=Acrki1IgTtAer0iOKUw_jY8pGIkZZmH5ui-LVq3PzceH8P0lCVglyAQ20IGJbvxeGkT_lBWVFuEWfrAp&disable-funding=credit,card"></script>
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=Acrki1IgTtAer0iOKUw_jY8pGIkZZmH5ui-LVq3PzceH8P0lCVglyAQ20IGJbvxeGkT_lBWVFuEWfrAp&disable-funding=credit,card"></script> -->
 <script src="https://js.stripe.com/v3/"></script>
-<script src="<?php echo ASSETS.'/js/paypal.js' ?>"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<!-- <script src="<?php echo ASSETS.'/js/paypal.js' ?>"></script> -->
 <script src="<?php echo ASSETS.'/js/stripe.js' ?>"></script>
 
 

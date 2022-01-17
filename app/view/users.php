@@ -73,9 +73,12 @@
                         <?php echo gravatar($Listing['id'],$Listing['avatar'],$Listing['name'],'media w-sm-thumb lazy');?>
                         <div class="ml-3">
                             <div class="title">
-                                <?php echo $Listing['name'];?>
+                                <?php echo $Listing['email'];?>
                                 <?php if($Listing['account_type'] == 'admin') { ?>
-                                <span class="badge bg-warning-lt ml-2"><?php echo __('Admin');?></span>
+                                    <span class="badge bg-warning-lt ml-2"><?php echo __('Admin');?></span>
+                                <?php } ?>
+                                <?php if($Listing['account_type'] == 'user') { ?>
+                                    <span class="badge bg-primary-lt ml-2"><?php echo __('Simple User');?></span>
                                 <?php } ?>
                             </div> 
                                 <div class="text-muted text-12"><?php echo $Listing['username'];?></div> 
