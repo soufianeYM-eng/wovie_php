@@ -5,8 +5,8 @@
         <div class="logo">
             <img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo">
         </div>
-        <div class="sign-in">
-            <a href="<?php echo APP.'/login';?>" class="btn btn-rounded">Sign In</a>
+        <div class="mail-user">
+            <a href="<?php echo APP.'/';?>" class="btn btn-rounded"><?php echo $AuthUser['email'];?></a>
         </div>
     </div>      
 
@@ -22,24 +22,41 @@
             </div>
         </div>
     </div>
+    <div id="form-detail">
+
+    </div>
 </header>
 
 <script>
-    $.ajax({
-        type: "POST",
-        url: "/register",
-        data: {
-            email: document.getElementById(field),
-            password: document.getElementById(field),
-            paypal: document.getElementById(field),
-        },
-        dataType: "json",
-        success: function(data) {
-            // do what ever you want with the server response
-        },
-        error: function(){
-            // error handling
-        }
-    });
+
+    // var email = localStorage.getItem("email");
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("name", "payment_done");
+
+    // var FN = document.createElement("input");
+    // FN.setAttribute("type", "hidden");
+    // FN.setAttribute("name", "email");
+    // FN.setAttribute("value", email);
+
+    var Payment_type = document.createElement("input");
+    Payment_type.setAttribute("type", "hidden");
+    Payment_type.setAttribute("name", "method_payment");
+    Payment_type.setAttribute("value", "Stripe");
+
+    var Action = document.createElement("input");
+    Action.setAttribute("type", "hidden");
+    Action.setAttribute("name", "_ACTION");
+    Action.setAttribute("value", "payment");
+    
+    form.appendChild(Action);
+    form.appendChild(Payment_type);
+    // form.appendChild(FN);
+    
+    
+    document.getElementById('form-detail').appendChild(form);
+    setTimeout(() => {
+        document.forms["payment_done"].submit();
+    }, 4000);
 </script>
 

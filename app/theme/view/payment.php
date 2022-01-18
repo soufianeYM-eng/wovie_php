@@ -5,8 +5,8 @@
         <div class="logo">
             <a href="<?php echo APP.'/home';?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo"></a>
         </div>
-        <div class="sign-in">
-            <a href="<?php echo APP.'/login';?>" class="btn btn-rounded">Sign In</a>
+        <div class="mail-user">
+            <a href="<?php echo APP.'/';?>" class="btn btn-rounded"><?php echo $AuthUser['email'];?></a>
         </div>
     </div>      
     <div id="step2" class="flex-fill" style="margin-top:3%; ">

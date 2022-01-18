@@ -21,7 +21,7 @@
 
 .payment .arrow_right{
 	width: 20px;
-	transform: translatex(170px);
+	transform: translatex(83px);
 }
 
 .logos-payment{
@@ -208,6 +208,21 @@
 .sign-in{
     align-self: center;
 
+}
+
+.mail-user{
+	align-self: center;
+}
+
+.mail-user a{
+	color: #000;
+    margin-right: 50px;
+    font-size: 16px;
+	font-weight: 400;
+}
+
+.mail-user a:hover{
+	color: #000 !important;
 }
 
 .sign-in a{

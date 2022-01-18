@@ -60,16 +60,17 @@ class Register extends Controller
                 $AuthToken = Input::cryptor($Email . $Password . $this->db->lastId());
                 setcookie('Auth', $AuthToken, time() + (86400 * 365), "/");
                 $this->db->update('users')->where('id', $this->db->lastId(), '=')->set(array('token' => $AuthToken));
-                $last_user = $this->db->from('users')->where('email', Input::cleaner($_POST['email']), '=')->first();
+                // $last_user = $this->db->from('users')->where('email', Input::cleaner($_POST['email']), '=')->first();
 
 
-                $dataArrayPayment        = array(
-                    "user_id"                   => $last_user['id'],
-                    "date_payment"              => date("Y-m-d H:i:s"),
-                    "method"                    => Input::cleaner($_POST['method_payment'])
-                );
-                $this->db->insert('payment_infos')->set($dataArrayPayment);
-                header("location: " . APP);
+                // $dataArrayPayment        = array(
+                //     "user_id"                   => $last_user['id'],
+                //     "date_payment"              => date("Y-m-d H:i:s"),
+                //     "method"                    => Input::cleaner($_POST['method_payment'])
+                // );
+                // $this->db->insert('payment_infos')->set($dataArrayPayment);
+                // header("location: " . APP);
+                header("location: " . APP."/payment");
             }else{
                 $this->notify($Notify);
             }

@@ -91,8 +91,6 @@ class App {
             'Register',
             'Logout',
             'Home',
-            'Success',
-            'Stripe',
             'Payment'
         );
         $AuthSettings   = json_decode($AuthUser['data'], true);

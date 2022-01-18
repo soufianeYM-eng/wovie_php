@@ -2,8 +2,7 @@ var stripe = Stripe('pk_test_51KHDXdCl0WW6IfVYmyCSNwbCjpasz2ccpXixtnzBQydKWRYsrI
 
 const btn = document.getElementById("stripe-button-container")
 btn.addEventListener('click', function(e) {
-  localStorage.setItem("email", document.forms["infos_form_step1"]["email"].value)
-  localStorage.setItem("password", document.forms["infos_form_step1"]["password"].value)
+  var email = localStorage.getItem("email")
   e.preventDefault();
   stripe.redirectToCheckout({
     lineItems:[
@@ -13,8 +12,8 @@ btn.addEventListener('click', function(e) {
       }
     ],
     mode: "subscription",
-    successUrl: "http://wovie.test/successCheckout",
-    cancelUrl: "http://wovie.test/register",
+    successUrl: `http://wovie.test/successCheckout`,
+    cancelUrl: "http://wovie.test/failedCheckout",
   }).then(function(result){
       
   })
