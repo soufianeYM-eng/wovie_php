@@ -12,8 +12,10 @@ btn.addEventListener('click', function(e) {
       }
     ],
     mode: "subscription",
-    successUrl: `http://wovie.test/successCheckout`,
-    cancelUrl: "http://wovie.test/failedCheckout",
+    // successUrl: "http://wovie.test/successCheckout",
+    // cancelUrl: "http://wovie.test/failedCheckout",
+    successUrl: "http://aeonnovel-app.herokuapp.com/successCheckout",
+    cancelUrl: "http://aeonnovel-app.herokuapp.com/failedCheckout",
   }).then(function(result){
       
   })
