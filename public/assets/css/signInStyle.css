@@ -51,7 +51,6 @@ img {
 	height: 100%;
 	z-index: 1;
 	background: rgba(0, 0, 0, 0.65);
-	box-shadow: inset 30px 10px 150px #000000;
 }
 
 .logo {
