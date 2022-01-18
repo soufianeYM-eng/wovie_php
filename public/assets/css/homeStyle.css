@@ -30,10 +30,15 @@
     margin-top: 10px !important;
 }
 
+
+.quote-div{
+    transform: translateX(80%)!important;
+}
+
 .all-get{
     display: flex;
     flex-direction: column;
-    width: 43%;
+    width: auto;
 }
 
 .typed-cursor{
@@ -220,7 +225,7 @@ img{
     flex-direction:row;
     /* I've used padding so you can see the edges of the elements. */
     padding:2px;
-    width: 65%;
+    width: auto;
 }
   
 input {
