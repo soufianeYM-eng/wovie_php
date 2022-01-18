@@ -28,7 +28,9 @@
                     <input type="email" name="email" id="mail" placeholder="Email address" required>
                     <button type="submit" id="btn-started" class="button btn btn-lg" >Get started</button>
                 </div>
-                <img class="quote-trial" src="<?php echo ASSETS.'/img/quote_7_day.png'; ?>">
+                <div class="quote-div">
+                    <img class="quote-trial" src="<?php echo ASSETS.'/img/quote_7_day.png'; ?>">
+                </div>
             </div>
         </div>
     </header>
