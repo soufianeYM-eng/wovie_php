@@ -11,19 +11,25 @@
     <header class="showcase">
         <div class="showcase-top">
             <img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo">
-            <a href="<?php echo APP.'/login';?>" class="btn btn-rounded btn-signIn">Sign In</a>
+            <a href="<?php echo APP.'/login';?>" class="btn btn-signIn">Sign in</a>
         </div>
         <div class="showcase-content">
-            <h1>Novels and lightnovels in audiobooks</h1>
+            <h1 class="big-title">Novels and lightnovels in audiobooks</h1>
             <div class="flex">
                 <h3 class="header-sub-title" id="word"></h3><p class="header-sub-title blink typed-cursor">|</p>
             </div>
-            <p>Ready to start? Enter your email to begin or restart your account</p>
-            <div class="get-started">
-                <input type="email" name="email" id="mail" placeholder="Email address" required>
-                <button type="submit" id="btn-started" class="btn btn-lg">Get started</button>
+            <p class="ready">Ready to start ? Enter your email to begin or restart your account</p>
+            <!-- <div class="get-started">
+                <input class="email" type="email" name="email" id="mail" placeholder="Email address" required>
+                <button class="button" type="submit" id="btn-started" class="btn btn-lg">Get started</button>
+            </div> -->
+            <div class="all-get">
+                <div class="get-started">
+                    <input type="email" name="email" id="mail" placeholder="Email address" required>
+                    <button type="submit" id="btn-started" class="button btn btn-lg" >Get started</button>
+                </div>
+                <img class="quote-trial" src="<?php echo ASSETS.'/img/quote_7_day.png'; ?>">
             </div>
-            <img class="quote-trial" src="<?php echo ASSETS.'/img/quote_7_day.png'; ?>">
         </div>
     </header>
 
@@ -115,7 +121,7 @@
         localStorage.setItem("user-mail", email.value);
         window.location.replace('/register');
     })
-    const words = ["Unlimited access","Several thousand hours"];
+    const words = ["Unlimited access","More Than 5000 Hours Of Listening"];
     let i = 0;
     let timer;
 

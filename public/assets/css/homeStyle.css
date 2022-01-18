@@ -25,15 +25,15 @@
 }
 
 .quote-trial{
-    z-index: 7;
-    position: absolute;
-    bottom: -16vh;
-    left: 41vh;
     width: 340px;
+    align-self: flex-end;
+    margin-top: 10px !important;
 }
-.quote-trial img{
-    width: 10% !important;
-    margin-right: 7px;
+
+.all-get{
+    display: flex;
+    flex-direction: column;
+    width: 43%;
 }
 
 .typed-cursor{
@@ -42,9 +42,22 @@
     line-height: 1.25em !important;
 }
 
+.btn-signIn{
+    letter-spacing: 0.2pt !important;
+    border-radius: 5px !important;
+    display: inline-block !important; 
+    line-height: 1 !important;
+    font-size: 12px !important;
+    padding: 15px 28px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
 .btn-signIn:hover{
-    background: white !important;
+    background: #ffffff !important;
     color: #000000 !important;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
 }
 
 .blink {
@@ -116,7 +129,6 @@ img{
     height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.65);
-    box-shadow: inset 30px 10px 150px #000000;
 }
 
 
@@ -187,29 +199,91 @@ img{
 
 .showcase-content h1{
     font-family: veitnam;
-    font-weight: 700;
-    font-size: 64px;
+    font-size: 50px;
     margin: 0px;
     max-width: 800px;
-    line-height: 74.5px;
+    color: #FFF;
+    font-weight: 600;
+    line-height: 1.5em;
 }
 
 .showcase-content h3{
     color: white;
-    font-family: poppins;
+    font-family: veitnam;
     font-size: 25px;
     margin: 16px 0;
+}
+
+.get-started {
+    /* This bit sets up the horizontal layout */
+    display:flex;
+    flex-direction:row;
+    /* I've used padding so you can see the edges of the elements. */
+    padding:2px;
+    width: 65%;
+}
+  
+input {
+    /* Tell the input to use all the available space */
+    font-family: poppins;
+    flex-grow: 2;
+    border: none;
+    width: 250px;
+    height: 3rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    border-radius: 5px 0px 0px 5px;
+}
+  
+input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+}
+
+button {
+    /* Just a little styling to make it pretty */
+    font-family: poppins;
+    border:1px solid blue;
+    background:blue;
+    color:white;
+    letter-spacing: 0.2pt !important;
+    display: inline-block !important; 
+}
+
+button:hover{
+    background: #FFFFFF	 !important;
+    color: #000000 !important;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
 }
 
 .showcase-content p{
     font-family: poppins;
     font-size: 19.2px;
     font-weight: 300;
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+
 }
 
-.showcase-content input{
+.big-title{
+    text-transform:capitalize !important ;
+}
+
+.header-sub-title{
+    margin: 0 !important;
+    color: #FFF !important;
+    font-size: 50px !important;
+    font-weight: 600 !important;
+    line-height: 1.5em !important;
+    text-transform: capitalize !important;
+}
+
+.ready{
+    padding: 0px !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}
+
+/* .showcase-content input{
     position: absolute;
     left: 0;
     bottom: -8vh;
@@ -217,8 +291,8 @@ img{
     height: 3rem;
     font-size: 1rem;
     padding-left: 0.5rem;
-    border-radius: 7px;
-}
+    border-radius: 5px;
+} */
 
 .btn{
     display: inline-block;
@@ -236,14 +310,14 @@ img{
 }
 
 .btn:hover{
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .btn-rounded{
     border-radius: 5px;
 }
 
-@media screen and (max-width: 1440px) and (min-width: 768px) {
+/* @media screen and (max-width: 1440px) and (min-width: 768px) {
     .showcase-content .btn-lg{
         left: 38.3vh !important;
     }
@@ -253,17 +327,14 @@ img{
     .showcase-content .btn-lg{
         left: 35.5vh !important;
     }
-}
+} */
 
 .showcase-content .btn-lg{
-    position: absolute;
     font-size: 20px;
     text-align: center;
-    left: 35vh;
-    padding: 13px 19px 12px 19px;
-    border-radius: 0px 7px 7px 0px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 0px 5px 5px 0px;
     background: #37b6ffff;
-    bottom: -8vh;
     box-shadow: none;
 }
 
