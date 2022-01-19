@@ -146,16 +146,13 @@ class App {
             $payment_infos = $db->from("payment_infos")->where("user_id", $AuthUser["id"])->orderby('date_payment','DESC')->first();
             $date_subscription = $payment_infos['date_payment']; //date_subscription
             $datetime = date("Y-m-d H:i:s"); //date now
-            //convert to datetime object to make difference
+            // //convert to datetime object to make difference
             $date1 = new DateTime($datetime); 
             $date2 = new DateTime($date_subscription); 
             $interval = $date1->diff($date2);
             $difference = intval($interval->format('%a'));
-
             if($difference > 31 OR $payment_infos == NULL){
                 header("location:".APP."/payment");
-            }else{
-                header("location:".APP);
             }
         }
         

@@ -23,13 +23,11 @@ class Success extends Controller {
 	public function check()
     {
 		$AuthUser               = $this->getVariable("AuthUser");
-        // $last_user = $this->db->from('users')->where('email', Input::cleaner($AuthUser['email']), '=')->first();
         $dataArrayPayment        = array(
             "user_id"                   => $AuthUser['id'],
             "date_payment"              => date("Y-m-d H:i:s"),
             "method"                    => Input::cleaner($_POST['method_payment'])
         );
-		echo var_dump($dataArrayPayment);
         $this->db->insert('payment_infos')->set($dataArrayPayment);
         header("location: " . APP);
         return $this;
