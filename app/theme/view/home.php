@@ -24,10 +24,11 @@
                 <button class="button" type="submit" id="btn-started" class="btn btn-lg">Get started</button>
             </div> -->
             <div class="all-get">
-                <div class="get-started">
+                <form class="get-started" method="POST">
+                    <input type="hidden" name="_ACTION" value="get-started">
                     <input type="email" name="email" id="mail" placeholder="Email address" required>
                     <button type="submit" id="btn-started" class="button btn btn-lg" >Get started</button>
-                </div>
+                </form>
                 <div class="quote-div">
                     <img class="quote-trial" src="<?php echo ASSETS.'/img/quote_7_day.png'; ?>">
                 </div>
@@ -121,7 +122,7 @@
     var email = document.getElementById("mail");
     started.addEventListener('click',function(){
         localStorage.setItem("user-mail", email.value);
-        window.location.replace('/register');
+        //window.location.replace('/register');
     })
     const words = ["Unlimited access","More Than 5000 Hours Of Listening"];
     let i = 0;
