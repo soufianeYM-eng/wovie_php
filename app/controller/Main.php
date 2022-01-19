@@ -10,7 +10,7 @@ class Main extends Controller {
 		$Config['title'] 		= get($Settings, "data.title", "general");
 		$Config['description'] 	= get($Settings, "data.description", "general");
 		$Config['nav'] 		= get($Settings, "data.title", "main");
- 
+		
  
 
         $HomeModules        = $this->db->from("modules")->where('page','home')->where('status',1)->orderby('sortable','ASC')->all();

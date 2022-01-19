@@ -91,8 +91,45 @@ class App {
             'Register',
             'Logout',
             'Home',
-            'Payment'
         );
+
+        $Middleware = array(
+            'Main',
+            'Comments',
+            'Search',
+            'Discovery',
+            'Trends',
+            'Movie',
+            'Movies',
+            'Serie',
+            'Episode',
+            'Series',
+            'Actor',
+            'Actors',
+            'Channel',
+            'Channels',
+            'Collection',
+            'Collections',
+            'Discussion',
+            'Discussions',
+            'Category',
+            'Categories',
+            'Profile',
+            'Notifications',
+            'Settings',
+            'Page',
+            'SitemapMain',
+            'SitemapPosts',
+            'SitemapEpisodes',
+            'SitemapActors',
+            'SitemapDiscussions',
+            'SitemapCollections',
+            'SitemapCategories',
+            'SitemapUsers',
+            'Sitemap',
+            
+        );
+
         $AuthSettings   = json_decode($AuthUser['data'], true);
         $this->controller->setVariable("AuthUser", $AuthUser) 
                          ->setVariable("AuthSettings", $AuthSettings)
@@ -101,14 +138,28 @@ class App {
                          ->setVariable("Token", Csrf::token())
                          ->setVariable("isValid", Csrf::all())
                          ->setVariable("Notify", Controller::notify()); 
-
-        if(!in_array($Route->target, $Permissions) AND !$AuthUser['id'] AND get($Settings,'data.members','general') == '1') {
-            header('location:'.APP.'/home');
-        } 
-        $this->controller->process();
         
 
+        if(!in_array($Route->target, $Permissions) AND !$AuthUser['id'] AND get($Settings,'data.members','general') == '1') {
+            header('location:'.APP.'/login');
+        }else if(in_array($Route->target, $Middleware) AND $AuthUser['id']){
+            $payment_infos = $db->from("payment_infos")->where("user_id", $AuthUser["id"])->orderby('date_payment','DESC')->first();
+            $date_subscription = $payment_infos['date_payment']; //date_subscription
+            $datetime = date("Y-m-d H:i:s"); //date now
+            //convert to datetime object to make difference
+            $date1 = new DateTime($datetime); 
+            $date2 = new DateTime($date_subscription); 
+            $interval = $date1->diff($date2);
+            $difference = intval($interval->format('%a'));
 
+            if($difference > 31 OR $payment_infos == NULL){
+                header("location:".APP."/payment");
+            }else{
+                header("location:".APP);
+            }
+        }
+        
+        $this->controller->process();
     }
     
     public function notify($data = array()) {
