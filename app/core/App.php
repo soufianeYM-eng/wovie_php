@@ -141,7 +141,7 @@ class App {
         
 
         if(!in_array($Route->target, $Permissions) AND !$AuthUser['id'] AND get($Settings,'data.members','general') == '1') {
-            header('location:'.APP.'/login');
+            header('location:'.APP.'/home');
         }else if(in_array($Route->target, $Middleware) AND $AuthUser['id']){
             $payment_infos = $db->from("payment_infos")->where("user_id", $AuthUser["id"])->orderby('date_payment','DESC')->first();
             $date_subscription = $payment_infos['date_payment']; //date_subscription
