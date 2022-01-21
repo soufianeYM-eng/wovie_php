@@ -2,7 +2,7 @@
 <div class="app-content">
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo APP;?>">
+            <li class="breadcrumb-item"><a href="<?php echo APP.'/main';?>">
                     <?php echo __('Home');?></a></li>
             <li class="breadcrumb-item active"><a href="<?php echo APP.'/trends';?>">
                     <?php echo __('Trends');?></a></li>
@@ -129,7 +129,7 @@
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "<?php echo APP;?>",
+    "url": "<?php echo APP.'/main';?>",
     "potentialAction": {
         "@type": "SearchAction",
         "target": "<?php echo APP.'/arama/';?>{search_term}",

@@ -12,7 +12,7 @@
                     <use xlink:href="<?php echo ASSETS.'/img/sprite.svg#logo';?>" />
                 </svg>
             </a>
-            <a href="<?php echo APP;?>" target="_blank" class="frontend">
+            <a href="<?php echo APP.'/main';?>" target="_blank" class="frontend">
                 <svg class="icon">
                     <use xlink:href="<?php echo ASSETS.'/img/sprite.svg#house';?>" />
                 </svg>

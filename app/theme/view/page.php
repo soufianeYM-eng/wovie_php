@@ -3,7 +3,7 @@
     <div class="flex-fill">
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo APP;?>"><?php echo __('Home');?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo APP.'/main';?>"><?php echo __('Home');?></a></li>
                 <li class="breadcrumb-item active"><a href="<?php echo APP.'/page/'.$Listing['self'];?>"><?php echo $Listing['name'];?></a></li>
             </ol>
         </nav>

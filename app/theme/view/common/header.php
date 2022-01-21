@@ -10,7 +10,7 @@
                     </svg>
                 </div>
                 <div class="app-navbar">
-                    <a href="<?php echo APP;?>" class="navbar-brand">
+                    <a href="<?php echo APP.'/main';?>" class="navbar-brand">
                         <img src="<?php echo LOCAL.'/'.get($Settings,'data.logo','general').'?v='.VERSION;?>" alt="<?php echo get($Settings,'data.title','general');?>" width="134" height="40">
                     </a>
                 </div>
