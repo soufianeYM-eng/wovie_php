@@ -83,7 +83,7 @@
     </style>
     <?php echo get($Settings,'data.headcode','general');?>
     <?php if($Config['share'] == true) { ?>
-    <meta property="og:site_name" content="<?php echo APP;?>">
+    <meta property="og:site_name" content="<?php echo APP.'/main';?>">
     <meta property="og:url" content="<?php echo $Config['url'];?>">
     <meta property="og:type" content="<?php echo $Config['ogtype'];?>">
     <meta property="og:title" content="<?php echo $Config['title'];?>">

@@ -2,7 +2,7 @@
 <div class="app-content">
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo APP;?>"><?php echo __('Home');?></a></li>
+            <li class="breadcrumb-item"><a href="<?php echo APP.'/main';?>"><?php echo __('Home');?></a></li>
             <li class="breadcrumb-item active"><a href="<?php echo APP.'/search/'.$Route->params->q;?>"><?php echo __('Search Results');?></a></li>
         </ol>
     </nav>

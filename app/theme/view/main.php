@@ -13,7 +13,7 @@
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "<?php echo APP;?>",
+    "url": "<?php echo APP.'/main';?>",
     "potentialAction": {
         "@type": "SearchAction",
         "target": "<?php echo APP.'/search/';?>{search_term}",

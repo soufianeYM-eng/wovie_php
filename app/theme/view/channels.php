@@ -2,7 +2,7 @@
 <div class="flex-fill">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo APP;?>">
+            <li class="breadcrumb-item"><a href="<?php echo APP.'/main';?>">
                     <?php echo __('Home');?></a></li>
             <li class="breadcrumb-item active" aria-current="page">
                 <?php echo __('TV Channels');?>
@@ -54,7 +54,7 @@
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "<?php echo APP;?>",
+    "url": "<?php echo APP.'/main';?>",
     "potentialAction": {
         "@type": "SearchAction",
         "target": "<?php echo APP.'/arama/';?>{search_term}",
