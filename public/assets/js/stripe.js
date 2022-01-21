@@ -1,3 +1,27 @@
+// var stripe = Stripe('pk_test_51KHDXdCl0WW6IfVYmyCSNwbCjpasz2ccpXixtnzBQydKWRYsrIe4eePFI9ies5fgO2Y9xUbUSU9ydLBjLLJDeudc000MSUOvQP');
+
+// const btn = document.getElementById("stripe-button-container")
+// btn.addEventListener('click', function(e) {
+//   var email = localStorage.getItem("email")
+//   e.preventDefault();
+//   stripe.redirectToCheckout({
+//     lineItems:[
+//       {
+//         price: "price_1KHDkACl0WW6IfVY0ZvzojaV",
+//         quantity: 1,
+//       }
+//     ],
+//     mode: "subscription",
+//     successUrl: "http://wovie.test/successCheckout",
+//     cancelUrl: "http://wovie.test/failedCheckout",
+//     // successUrl: "https://aeonnovel.com/successCheckout",
+//     // cancelUrl: "https://aeonnovel.com/failedCheckout",
+//   }).then(function(result){
+      
+//   })
+// });
+
+
 var stripe = Stripe('pk_live_51JYzJ6G7Xe1IFfvWRoxakEhdZN6FbcXWkir2rY4b4OCZM6JXhlybNxFJZbk0AG08lYNJbDpcY4ePagEroPtK3Glo00YAqii0CB');
 
 const btn = document.getElementById("stripe-button-container")
@@ -12,10 +36,10 @@ btn.addEventListener('click', function(e) {
       }
     ],
     mode: "subscription",
-    // successUrl: "http://wovie.test/successCheckout",
-    // cancelUrl: "http://wovie.test/failedCheckout",
-    successUrl: "https://aeonnovel.com/successCheckout",
-    cancelUrl: "https://aeonnovel.com/failedCheckout",
+    successUrl: "http://wovie.test/successCheckout",
+    cancelUrl: "http://wovie.test/failedCheckout",
+    // successUrl: "https://aeonnovel.com/successCheckout",
+    // cancelUrl: "https://aeonnovel.com/failedCheckout",
   }).then(function(result){
       
   })

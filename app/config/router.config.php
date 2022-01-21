@@ -1,11 +1,11 @@
 <?php 
 
 // General
-App::addRoute("GET|POST", "/",										"Main");
+App::addRoute("GET|POST", "/main",									"Main");
 App::addRoute("GET|POST", "/payment",						        "Payment");
 App::addRoute("GET|POST", "/successCheckout",						"Success");
 App::addRoute("GET|POST", "/failedCheckout",						"Failed");
-App::addRoute("GET|POST", "/home",									"Home");
+App::addRoute("GET|POST", "/",						    			"Home");
 App::addRoute("GET|POST", "/ajax/[*:ajax]/[*:action]?/?",			"Ajax"); 
 App::addRoute("GET|POST", "/api/[*:api]/[*:action]?/?",				"Api");
 App::addRoute("GET|POST", "/cron/[*:action]?/?",					"Cron");

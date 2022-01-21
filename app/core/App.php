@@ -141,7 +141,7 @@ class App {
         
 
         if(!in_array($Route->target, $Permissions) AND !$AuthUser['id'] AND get($Settings,'data.members','general') == '1') {
-            header('location:'.APP.'/home');
+            header('location:'.APP);
         }else if(in_array($Route->target, $Middleware) AND $AuthUser['id'] AND $AuthUser['account_type'] !="admin"){
             $payment_infos = $db->from("payment_infos")->where("user_id", $AuthUser["id"])->orderby('date_payment','DESC')->first();
             $date_subscription = $payment_infos['date_payment']; //date_subscription
@@ -151,8 +151,14 @@ class App {
             $date2 = new DateTime($date_subscription); 
             $interval = $date1->diff($date2);
             $difference = intval($interval->format('%a'));
-            if($difference > 31 OR $payment_infos == NULL){
+            if(in_array($Route->target, $Permissions) AND $AuthUser['id'] AND get($Settings,'data.members','general') == '1'){
+                header("location:".APP);
+                die();
+            }
+            else if($difference > 31 OR $payment_infos == NULL){
+                echo var_dump($_SERVER['REQUEST_URI']);
                 header("location:".APP."/payment");
+                die();
             }
         }
         

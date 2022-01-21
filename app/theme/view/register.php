@@ -3,7 +3,7 @@
 <header class="showcase">
     <div class="header">
         <div class="logo">
-            <a href="<?php echo APP.'/home';?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo"></a>
+            <a href="<?php echo APP;?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo"></a>
         </div>
         <div class="sign-in">
             <a href="<?php echo APP.'/login';?>" class="btn btn-rounded">Sign In</a>

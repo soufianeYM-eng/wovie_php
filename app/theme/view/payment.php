@@ -3,7 +3,7 @@
 <header class="showcase">
     <div class="header">
         <div class="logo">
-            <a href="<?php echo APP.'/home';?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo"></a>
+            <a href="<?php echo APP;?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>" alt="Aeonnovel Logo"></a>
         </div>
         <div class="mail-user">
             <a href="<?php echo APP.'/';?>" class="btn btn-rounded"><?php echo $AuthUser['email'];?></a>
