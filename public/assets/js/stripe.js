@@ -36,10 +36,10 @@ btn.addEventListener('click', function(e) {
       }
     ],
     mode: "subscription",
-    successUrl: "http://wovie.test/successCheckout",
-    cancelUrl: "http://wovie.test/failedCheckout",
-    // successUrl: "https://aeonnovel.com/successCheckout",
-    // cancelUrl: "https://aeonnovel.com/failedCheckout",
+    // successUrl: "http://wovie.test/successCheckout",
+    // cancelUrl: "http://wovie.test/failedCheckout",
+    successUrl: "https://aeonnovel.com/successCheckout",
+    cancelUrl: "https://aeonnovel.com/failedCheckout",
   }).then(function(result){
       
   })
