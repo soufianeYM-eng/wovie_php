@@ -1,4 +1,4 @@
-var stripe = Stripe('pk_test_51KHDXdCl0WW6IfVYmyCSNwbCjpasz2ccpXixtnzBQydKWRYsrIe4eePFI9ies5fgO2Y9xUbUSU9ydLBjLLJDeudc000MSUOvQP');
+var stripe = Stripe('pk_live_51JYzJ6G7Xe1IFfvWRoxakEhdZN6FbcXWkir2rY4b4OCZM6JXhlybNxFJZbk0AG08lYNJbDpcY4ePagEroPtK3Glo00YAqii0CB');
 
 const btn = document.getElementById("stripe-button-container")
 btn.addEventListener('click', function(e) {
@@ -7,7 +7,7 @@ btn.addEventListener('click', function(e) {
   stripe.redirectToCheckout({
     lineItems:[
       {
-        price: "price_1KHDkACl0WW6IfVY0ZvzojaV",
+        price: "price_1KJkbIG7Xe1IFfvWa6ZmPOk7",
         quantity: 1,
       }
     ],
@@ -22,7 +22,7 @@ btn.addEventListener('click', function(e) {
 });
 
 
-// var stripe = Stripe('pk_test_51KHDXdCl0WW6IfVYmyCSNwbCjpasz2ccpXixtnzBQydKWRYsrIe4eePFI9ies5fgO2Y9xUbUSU9ydLBjLLJDeudc000MSUOvQP');
+// var stripe = Stripe('#');
 
 // const btn = document.getElementById("stripe-button-container")
 // btn.addEventListener('click', function(e) {
@@ -42,7 +42,7 @@ btn.addEventListener('click', function(e) {
 
 
 // var handler = StripeCheckout.configure({
-// key: 'pk_test_51KHDXdCl0WW6IfVYmyCSNwbCjpasz2ccpXixtnzBQydKWRYsrIe4eePFI9ies5fgO2Y9xUbUSU9ydLBjLLJDeudc000MSUOvQP',
+// key: '#',
 // image: 'https://i.ibb.co/9cr0CYf/favicon.png',
 // locale: 'auto',
 // token: function(token) {
