@@ -6,11 +6,17 @@ class Home extends Controller
     public function process()
     { 
         $AuthUser               = $this->getVariable("AuthUser"); 
+        $Route                  = $this->getVariable("Route");
+        $Settings               = $this->getVariable("Settings");    
+        $isValid                = $this->getVariable("isValid"); 
         if (Input::cleaner($_POST['_ACTION']) == 'get-started') {
             $this->check(); 
-        } elseif ($AuthUser['id']) {
-            header("location: " . APP);
         } 
+
+        $Config['title']        = __('Home').' - '.get($Settings, "data.title", "general");
+        $Config['description']  = get($Settings, "data.description", "general"); 
+        $Config['url']          = APP.'/'; 
+        $this->setVariable("Config", $Config);  
         $this->view('home', 'app');
     }
 

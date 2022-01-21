@@ -9,7 +9,7 @@
 <body>
     <header class="showcase">
             <div class="logo">
-                <a href="<?php echo APP.'/home';?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>"></a>
+                <a href="<?php echo APP;?>"><img src="<?php echo ASSETS.'/img/logoAeo.png';?>"></a>
             </div>
             <div class="showcase-content">
                 <div class="formm">

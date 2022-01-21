@@ -29,7 +29,7 @@ class Success extends Controller {
             "method"                    => Input::cleaner($_POST['method_payment'])
         );
         $this->db->insert('payment_infos')->set($dataArrayPayment);
-        header("location: " . APP);
+        header("location: " . APP . '/main');
         return $this;
     }
 }

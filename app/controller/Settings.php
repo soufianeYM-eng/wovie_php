@@ -8,7 +8,7 @@ class Settings extends Controller {
 		$Route 					= $this->getVariable("Route");
 		$Settings 				= $this->getVariable("Settings"); 
 		if (!$AuthUser['id'] and !\Delight\Cookie\Cookie::exists('Auth')) {
-            header("location: " . APP);
+            header("location: " . APP . '/main');
         }
 		$Config['title'] 		= __('Settings').' - '.get($Settings, "data.title", "general");
 		$Config['description'] 	= get($Settings, "data.description", "general");

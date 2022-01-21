@@ -12,7 +12,7 @@ class Login extends Controller
         if (Input::cleaner($_POST['_ACTION']) == 'login' AND $isValid) {
             $this->check(); 
         } elseif ($AuthUser['id']) {
-            header("location: " . APP);
+            header("location: " . APP .'/main');
         }
 
         $Config['title']        = __('Login').' - '.get($Settings, "data.title", "general");
@@ -48,7 +48,7 @@ class Login extends Controller
                 setcookie('Auth', $AuthToken, time() + (86400 * 365), "/");
 
                 $this->db->update('users')->where('id', $Login['id'], '=')->set(array('token' => $AuthToken));
-                header("location: " . APP);
+                header("location: " . APP . '/main');
             } else {
                 $Notify['type'] = 'danger';
                 $Notify['text'] = __('Your information is incorrect !');

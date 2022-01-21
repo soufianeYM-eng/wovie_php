@@ -14,7 +14,7 @@ class Register extends Controller
         if(Input::cleaner($_POST['_ACTION']) == 'register' AND $isValid) {
             $this->check();
         } elseif ($AuthUser['id'] and \Delight\Cookie\Cookie::exists('Auth')) {
-            header("location: " . APP);
+            header("location: " . APP .'/main');
         }
         $Config['title']        = __('Register').' - '.get($Settings, "data.title", "general");
         $Config['description']  = get($Settings, "data.description", "general"); 
