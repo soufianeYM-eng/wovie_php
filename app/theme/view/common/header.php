@@ -166,7 +166,7 @@
                 </ul>
                 <ul class="nav">
                     <li <?php if(empty($Config['nav'])) echo 'class="active"' ;?>>
-                        <a href="<?php echo APP.'/';?>">
+                        <a href="<?php echo APP.'/main';?>">
                             <?php if(get($Settings,'data.menuicon','theme') == 1) { ?>
                             <svg class="nav-icon">
                                 <use xlink:href="<?php echo ASSETS.'/img/sprite.svg#house';?>" />
